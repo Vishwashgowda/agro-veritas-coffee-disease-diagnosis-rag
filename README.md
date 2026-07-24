@@ -289,15 +289,7 @@ Confirm Ollama service and model availability:
 ollama list
 ```
 
-## 13. Reproducibility Notes
-
-For consistent paper reporting:
-1. use the same labeled dataset (`test/evaluation_dataset.json`),
-2. run evaluation from a clean session,
-3. report proxy metrics explicitly as proxies,
-4. pair metric table with hybrid-distribution results.
-
-## 14. Ethical and Practical Disclaimer
+## 13. Ethical and Practical Disclaimer
 
 This system is a research prototype for decision support. It should be used with agronomic judgment and local field validation before operational deployment.
 

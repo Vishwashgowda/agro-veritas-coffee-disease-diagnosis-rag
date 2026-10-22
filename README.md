@@ -5,11 +5,8 @@
 ![LLM](https://img.shields.io/badge/LLM-Ollama%20(phi3%203.8B)-orange)
 ![Vector DB](https://img.shields.io/badge/Vector%20DB-FAISS-purple)
 ![Tests](https://img.shields.io/badge/Tests-pytest-brightgreen)
-![Conference](https://img.shields.io/badge/ICECCE%202026-Kuala%20Lumpur-red)
 
 A **hallucination-aware, multi-turn** coffee plant disease diagnosis system built on a **hybrid Retrieval-Augmented Generation (RAG)** pipeline. Instead of guessing from a vague symptom description, the system detects what's missing, asks targeted follow-up questions, retrieves evidence from structured and unstructured sources, and verifies its own answer before replying.
-
-> 📄 Accompanying paper: *Hallucination-Aware Coffee Disease Diagnosis using Retrieval-Augmented Generation*, 7th International Conference on Electrical, Communication and Computer Engineering (ICECCE), 22–23 October 2026, Kuala Lumpur, Malaysia.
 
 ---
 
@@ -29,7 +26,6 @@ A **hallucination-aware, multi-turn** coffee plant disease diagnosis system buil
 - [Evaluation dataset](#-evaluation-dataset)
 - [Limitations](#-limitations)
 - [Future work](#-future-work)
-- [Citation](#-citation)
 - [Authors](#-authors)
 - [References](#-references)
 
@@ -193,7 +189,7 @@ System:  [Diagnosis] Coffee Leaf Rust  + treatment and prevention steps
 agro-veritas-coffee-disease-diagnosis-rag/
 ├── config/      # Configuration (LLM endpoint, thresholds, limits)
 ├── data/        # JSON knowledge base and PDF reference documents
-├── docs/        # Documentation and paper-related material
+├── docs/        # Project documentation
 ├── scripts/     # Utility scripts (indexing, evaluation, etc.)
 ├── src/         # Core pipeline: retrieval, ambiguity detection, diagnosis, verification
 ├── test/        # pytest suite and evaluation framework
@@ -234,7 +230,7 @@ ollama pull phi3
 
 ## 🔧 Configuration
 
-Settings live in `config/`. Defaults from the paper:
+Settings live in `config/`. Default values:
 
 | Parameter | Value |
 |---|---|
@@ -242,7 +238,7 @@ Settings live in `config/`. Defaults from the paper:
 | PDF chunk size / overlap | 500 / 50 tokens |
 | Retrieval fusion weights | 0.6 JSON / 0.4 PDF |
 | Confidence threshold | 0.7 |
-| Max clarification turns | 3 (paper setting; adjustable via `MAX_QUESTIONS`) |
+| Max clarification turns | 3 (adjustable via `MAX_QUESTIONS`) |
 | Hallucination-check generations | 5 |
 | LLM backend | Ollama `phi3` (3.8B) via OpenAI-compatible endpoint |
 
@@ -306,22 +302,6 @@ pytest test/ -v
 
 ---
 
-## 📖 Citation
-
-If you use this work, please cite:
-
-```bibtex
-@inproceedings{samaga2026coffeerag,
-  title     = {Hallucination-Aware Coffee Disease Diagnosis using Retrieval-Augmented Generation},
-  author    = {Samaga, Vaidurya and Gowda, Vishwas H and Kusumita, Y and Prajwala, T R and Kasturi, Nivedita and Patil, Swetha},
-  booktitle = {Proc. 7th International Conference on Electrical, Communication and Computer Engineering (ICECCE)},
-  year      = {2026},
-  address   = {Kuala Lumpur, Malaysia}
-}
-```
-
----
-
 ## 👥 Authors
 
 Department of Computer Science and Engineering, **PES University**, Bengaluru, India.
@@ -337,4 +317,4 @@ Department of Computer Science and Engineering, **PES University**, Bengaluru, I
 
 ## 📚 References
 
-Built on ideas from: **CRAG** (Yan et al.), **RAC** (Kebir et al.), **Farmer.Chat** (Singh et al.), and **SelfCheckGPT** (Manakul et al.). Knowledge sources: NIPHM *IPM Package for Coffee* and Vikaspedia *Coffee Cultivation Guide*. See the paper for the full reference list.
+Built on ideas from: **CRAG** (Yan et al.), **RAC** (Kebir et al.), **Farmer.Chat** (Singh et al.), and **SelfCheckGPT** (Manakul et al.). Knowledge sources: NIPHM *IPM Package for Coffee* and Vikaspedia *Coffee Cultivation Guide*.
